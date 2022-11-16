@@ -1,0 +1,288 @@
+.us_a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0px 10px 0px 10px;
+}
+
+.us_input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: 0;
+    margin: 20px 100px;
+    text-align: center;
+    font-size: 30px;
+    border: 1px solid grey;
+    color: rgb(65, 17, 17);
+    border-radius: 15px;
+    width: 400px;
+    height: 45px;
+}
+
+.shuru_div {
+    margin: 100px auto;
+    border: 5px solid brown;
+    width: 600px;
+    height: 450px;
+    border-radius: 15px;
+}
+
+.shuru_sub {
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    margin: 20px 200px;
+    border: 1px solid grey;
+    color: white;
+    border-radius: 5px;
+    background-color: brown;
+    cursor: pointer;
+}
+
+
+
+.denglu_div {
+    margin: 100px auto;
+    border: 5px solid brown;
+    width: 600px;
+    height: 450px;
+    border-radius: 15px;
+}
+.denglubody{
+	height:100%;
+	background-image: url(img/19.webp);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+.allbody{
+	height:100%;
+	background-image: url(img/31.webp);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+.zhucebody{
+	height:100%;
+	background-image: url(img/3.webp);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+.spxq1 {
+    width: 1100px;
+    height: 460px;
+    border: 1px solid grey;
+    margin: 0px auto;
+    border-radius: 15px;
+}
+
+.spxq1_1 {
+    width: 400px;
+    height: 400px;
+    margin: 20px 20px;
+    float: left;
+}
+
+.spxq1_2 {
+    width: 600px;
+    height: 400px;
+    margin: 20px 20px;
+    float: left;
+}
+
+.spxq1_1_1 {
+    font-size: 25px;
+    width: 400px;
+    margin: 20px 20px;
+}
+
+.spxq1_1_2 {
+    font-size: 40px;
+    color: orangered;
+    width: 260px;
+    height: 30px;
+    margin: 40px 20px;
+    width: 400px;
+}
+
+.spxq1_1_3 {
+    font-size: 20px;
+    color: rgb(82, 75, 73);
+    width: 260px;
+    height: 30px;
+    margin: 0px 20px;
+    width: 400px;
+}
+
+.spxqgm {
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 30px;
+    margin: 40px 20px;
+    background-color: brown;
+    color: white;
+}
+
+.spxq2 {
+    width: 1100px;
+    height: 460px;
+    border: 1px solid grey;
+    margin: 10px auto;
+    border-radius: 15px;
+}
+
+.spxq2_1 {
+    height: 200px;
+}
+
+.spxq2_2 {
+    height: 200px;
+}
+
+.spzhuye {
+    width: 1240px;
+    margin: 0px auto;
+}
+
+.spzhuye1 {
+    width: 300px;
+    height: 400px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border-style: hidden;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.spzhuye1:hover {
+    background-color: #c0c0c0;
+}
+
+.spzhuye1_1 {
+    width: 260px;
+    height: 260px;
+    margin: 20px 20px auto 20px;
+}
+
+.spzhuye1_2 {
+    font-size: 27px;
+    color: gray;
+    width: 260px;
+    height: 70px;
+    margin: 0px auto;
+    overflow: hidden;
+    text-overflow: elipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.spzhuye1_3 {
+    font-size: 27px;
+    color: orangered;
+    width: 260px;
+    height: 30px;
+    margin: 0px auto;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+.showdd1 {
+    width: 1100px;
+    height: 20px;
+    border: 1px solid grey;
+    margin: 10px auto; 
+}
+.showdd11 {
+    width: 1100px;
+    height: 20px;
+    border: 1px solid grey;
+    margin: 10px auto;
+    float:left;
+}
+
+.showdd2 {
+    width: 1100px;
+    height: 200px;
+    border: 1px solid grey;
+    margin: 10px auto;
+    border-radius: 15px;
+}
+
+.showdd1_1 {
+    width: 570px;
+    margin: 0px 10px;
+    float: left;
+}
+
+.showdd1_2 {
+    width: 150px;
+    margin: 0px 10px;
+    float: left;
+}
+
+.showdd2_1 {
+    height: 20px;
+    margin: 0px 20px;
+    font-size: 15px;
+    color: grey;
+}
+
+.showdd2_2 {
+    height: 150px;
+    width: 150px;
+    margin: 20px 10px;
+    float: left;
+}
+
+.showdd2_3 {
+    font-size: 20px;
+    color: black;
+    width: 400px;
+    height: 150px;
+    word-wrap: break-word;
+    margin: 10px 10px;
+    float: left;
+}
+
+.showdd2_4{
+    height: 150px;
+    width:150px;
+    margin: 20px 10px;
+    float: left;
+}
+
+table{
+    width:100%;
+    border: 2px solid brown;
+    border-radius:15px;
+    text-align: center;
+    font-size: 25px;
+    border-collapse: collapse;
+    color: grey;
+}
+
+td{
+    border: 1px solid brown;
+}
+
+.xuanze{
+    width: 120px;
+    height: 30px;
+    background-color: brown;
+    color: white;
+    border-radius: 5px;
+}
+
+.yifabu {
+    width: 1100px;
+    height: 500px;
+    border: 1px solid grey;
+    margin: 10px auto;
+    border-radius: 15px;
+}
+

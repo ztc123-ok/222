@@ -1,0 +1,61 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="com.vo.historyorder"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>查看历史记录</title>
+<link rel="stylesheet" href="page.css">
+</head>
+<body class="allbody">
+<c:if test="${empty sessionScope.user}">
+<%response.sendRedirect("admin_login.jsp"); %>
+</c:if>
+<c:if test="${not empty sessionScope.user}">
+    <a class="us_a" href="<%=request.getContextPath()%>/servlet_yhspxx">商品预览</a>
+    <a class="us_a" href="<%=request.getContextPath()%>/servlet_spxx">已上传商品</a>
+    <a class="us_a" href="<%=request.getContextPath()%>/servlet_jl">查看申请记录</a>
+    <a class="us_a" href="<%=request.getContextPath()%>/servlet_lsjl">查看历史记录</a>
+    <a class="us_a" href="admin_change.jsp">修改密码</a>
+    <a class="us_a" href="admin_waresup.jsp">上传商品</a>
+    <a class="us_a" href="servlet_tcdl">退出登录</a>
+    <hr />
+<table border="1">
+	<tr>
+		<td>订单id</td>
+		<td>商品id</td>
+		<td>客户名</td>
+		<td>交易时间</td>
+		<td>买家电话</td>
+		<td>买家地址</td>
+		<td>交易结果</td>
+	</tr>
+	<%
+		List<historyorder> asd= new ArrayList<historyorder>();
+		asd=(List<historyorder>)session.getAttribute("lsjlxx");
+		Iterator it =asd.iterator();
+		historyorder qwe=null;
+		while(it.hasNext()){
+			qwe=new historyorder();
+			qwe=(historyorder)it.next();
+			%>
+				<tr>
+					<td><%=qwe.getHistoryid() %></td>
+					<td><%=qwe.getWaresid() %></td>
+					<td><%=qwe.getBuyerid() %></td>
+					<td><%=qwe.getFinishtime() %></td>
+					<td><%=qwe.getBuyerphone() %></td>
+					<td><%=qwe.getBuyeraddress() %></td>
+					<td><%=qwe.getResult() %></td>
+				</tr>
+			<%
+		}
+	%>
+</c:if>
+</body>
+</html>
