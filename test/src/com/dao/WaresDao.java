@@ -12,4 +12,6 @@ public interface WaresDao {
   void updatezt(Wares paramWares) throws SQLException;
   
   Wares getperwares(Wares paramWares) throws SQLException;
+  
+  void deleteware_name(Wares paramWares) throws SQLException;
 }

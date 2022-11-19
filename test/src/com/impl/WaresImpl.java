@@ -89,6 +89,14 @@ public class WaresImpl implements WaresDao {
     ps.execute();
   }
   
+  public void deleteware_name(Wares w) throws SQLException {
+	    Connection conn = getConnection();
+	    String sql = "delete from wares where waresname=?";
+	    PreparedStatement ps = conn.prepareStatement(sql);
+	    ps.setString(1, w.getWaresname());
+	    ps.execute();
+	  }
+  
   public Wares getperwares(Wares w) throws SQLException {
     Connection conn = getConnection();
     String sql = "select waresid,waresname,waresprice,waresnumber,shopid,waresstate,warespicture,waresclass,matketing,oldprice from wares where waresid=?";

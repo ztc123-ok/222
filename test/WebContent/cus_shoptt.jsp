@@ -27,9 +27,6 @@ int id=w.getWaresid();
             <div class="spxq1_1_1">
              商品价格：<%=w.getWaresprice()%>￥
             </div>
-            <br/>
-            <br/>
-            <br/>
             <form action="cus_buyit.jsp">
             	<input type="hidden" name="wid" value="<%=w.getWaresid() %>">
             	<input type="hidden" name="shopid" value="<%=w.getShopid() %>">

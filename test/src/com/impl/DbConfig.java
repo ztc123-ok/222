@@ -15,7 +15,7 @@ public class DbConfig {
 	
 	public Connection dbConfig() throws SQLException{
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName(DRIVER);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

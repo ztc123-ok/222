@@ -23,7 +23,6 @@
 <h1>选择功能</h1>
 <a href="<%=request.getContextPath()%>/servlet_spxx">查看商品</a><br>
 <a href="<%=request.getContextPath()%>/servlet_jl">查看申请记录</a><br>
-<a href="<%=request.getContextPath()%>/servlet_lsjl">查看历史记录</a><br>
 <a href="admin_change.jsp">修改密码</a><br>
 </c:if>
 </body>

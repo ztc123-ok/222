@@ -16,7 +16,7 @@ if(result!=null){%>
 </script>
 </head>
 
-<body class="bodydelu">
+<body class="allbody">
   <%
 	String mess = (String)request.getAttribute("mess");         // 获取错误属性
 	if(mess != null) {

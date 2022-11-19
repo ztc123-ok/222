@@ -15,6 +15,7 @@
 <script type="text/javascript">
 <%
 String result=(String)session.getAttribute("order_result");
+
 if(result!=null){%>
 	alert("<%=result%>");
 	<%session.setAttribute("order_result", null);
@@ -28,14 +29,49 @@ if(result!=null){%>
 </c:if>
 <c:if test="${not empty sessionScope.user}">
 	<c:if test="${empty sessionScope.order_result}">
+	
+	
     <a class="us_a" href="<%=request.getContextPath()%>/servlet_yhspxx">商品预览</a>
-    <a class="us_a" href="<%=request.getContextPath()%>/servlet_spxx">已上传商品</a>
-    <a class="us_a" href="<%=request.getContextPath()%>/servlet_jl">查看申请记录</a>
-    <a class="us_a" href="<%=request.getContextPath()%>/servlet_lsjl">查看历史记录</a>
+    <a class="us_a" href="<%=request.getContextPath()%>/servlet_spxx">商品记录</a>
+    <a class="us_a" href="<%=request.getContextPath()%>/servlet_jl">申请记录</a>
     <a class="us_a" href="admin_change.jsp">修改密码</a>
     <a class="us_a" href="admin_waresup.jsp">上传商品</a>
     <a class="us_a" href="servlet_tcdl">退出登录</a>
     <hr />
+    <c:if test="${not empty sessionScope.ware}">
+    <%Wares w=(Wares)session.getAttribute("ware");
+	int id=w.getWaresid(); %>
+    <%
+	List<Wares> asd= new ArrayList<Wares>();
+	asd=(List<Wares>)session.getAttribute("yhspxx");%>
+	<div class="spxq1">
+        <div class="spxq1_1">
+            <img style="width: 100%;height:100%;" src="upload1/<%= w.getWarespicture()%>">
+        </div>
+        <div class="spxq1_2">
+            <div class="spxq1_1_1">
+            商品名：<%= w.getWaresname()%>
+            </div>
+            <div class="spxq1_1_1">
+             商品价格：<%=w.getWaresprice()%>￥
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <form action="admin_buyit.jsp">
+            	<input type="hidden" name="wid" value="<%=w.getWaresid() %>">
+            	<input type="hidden" name="shopid" value="<%=w.getShopid() %>">
+            	<%=w.getWaresstate()%>
+            </form>
+            <div class="spxq1_1_1">
+            </div>
+        </div>
+    </div>
+    <div class="spxq2">
+        <a class="us_a" href="">商品详情</a>
+        <hr/>
+        <%= w.getMatkering()%>
+    </div>
 <table border="1">
 	<tr>
 		<td>订单id</td>
@@ -53,28 +89,7 @@ if(result!=null){%>
 		asd_choose=(List<Order>)session.getAttribute("asd_choose");
 		Iterator it1=asd_nochoose.iterator();
 		Order qwe=null;
-		while(it1.hasNext()){
-			qwe=new Order();
-			qwe=(Order)it1.next();%>
-				<tr>
-					<td><%=qwe.getOrderid() %></td>
-					<td><%=qwe.getWaresid() %></td>
-					<td><%=qwe.getBuyerid() %></td>
-					<td><%=qwe.getOrdertime() %></td>
-					<td><%=qwe.getBuyerphone() %></td>
-					<td><%=qwe.getBuyeraddress() %></td>
-					<td>
-					<%if(asd_choose.size()==0){ %>
-					<form action="servlet_pergood2" method="post">
-						<input type="hidden" name="orid" value=<%=qwe.getOrderid()%>>
-						<input type="hidden" name="wid" value=<%=qwe.getWaresid() %>>
-						<input type="submit" name="freeze" value="选择">
-					</form> 
-					<%} %>
-					</td>
-				</tr>
-			<%
-		}
+		
 		Iterator it2=asd_choose.iterator();
 		while(it2.hasNext()){
 			qwe=new Order();
@@ -102,8 +117,34 @@ if(result!=null){%>
 				</tr>
 			<%
 		}
+		while(it1.hasNext()){
+			qwe=new Order();
+			qwe=(Order)it1.next();%>
+				<tr>
+					<td><%=qwe.getOrderid() %></td>
+					<td><%=qwe.getWaresid() %></td>
+					<td><%=qwe.getBuyerid() %></td>
+					<td><%=qwe.getOrdertime() %></td>
+					<td><%=qwe.getBuyerphone() %></td>
+					<td><%=qwe.getBuyeraddress() %></td>
+					<td>
+					<%if(asd_choose.size()==0){ %>
+					<form action="servlet_pergood2" method="post">
+						<input type="hidden" name="orid" value=<%=qwe.getOrderid()%>>
+						<input type="hidden" name="wid" value=<%=qwe.getWaresid() %>>
+						<input type="submit" name="freeze" value="选择">
+					</form> 
+					<%} %>
+					</td>
+				</tr>
+			<%
+		}
 	%>
 </table>
+</c:if>
+<c:if test="${empty sessionScope.ware}">
+<h1 style="text-align:center;">暂无出售商品</h1>
+</c:if>
 </c:if>
 </c:if>
 </body>

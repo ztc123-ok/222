@@ -20,9 +20,8 @@
 </c:if>
 <c:if test="${not empty sessionScope.user}">
     <a class="us_a" href="<%=request.getContextPath()%>/servlet_yhspxx">商品预览</a>
-    <a class="us_a" href="<%=request.getContextPath()%>/servlet_spxx">已上传商品</a>
-    <a class="us_a" href="<%=request.getContextPath()%>/servlet_jl">查看申请记录</a>
-    <a class="us_a" href="<%=request.getContextPath()%>/servlet_lsjl">查看历史记录</a>
+    <a class="us_a" href="<%=request.getContextPath()%>/servlet_spxx">商品记录</a>
+    <a class="us_a" href="<%=request.getContextPath()%>/servlet_jl">申请记录</a>
     <a class="us_a" href="admin_change.jsp">修改密码</a>
     <a class="us_a" href="admin_waresup.jsp">上传商品</a>
     <a class="us_a" href="servlet_tcdl">退出登录</a>
@@ -59,36 +58,17 @@
            <%=qwe.getWaresname() %>
         </div>
         <div class="showdd2_4">
-            <%=qwe.getWaresprice() %>￥
+            <%=qwe.getWaresprice() %>元
         </div>
         <div class="showdd2_4">
             <%=qwe.getWaresstate() %>
         </div>
-        
- <div class="showdd11">
- 			<div class="showdd1_2">
-            	店铺id
-      	    </div>
-        	<div class="showdd1_2">
-            	商品类别
-      	    </div>
-          	<div class="showdd1_2">
-            	营销信息
-       		 </div>
- 
- </div>
-       		
-       <div class="showdd2_4">
-            <%=qwe.getShopid()%><br/>
-        </div>
-       <div class="showdd2_4">
-            <%=qwe.getWaresclass() %>
-        </div>
         <div class="showdd2_4">
-            <%=qwe.getMatkering() %>
+            <a href="servlet_lsjl?wid=<%= qwe.getWaresid()%>">查看历史申请</a>
         </div>
-             
-    </div><%} %>
+ 
+ </div>      
+   <%} %>
 </c:if>
 </body>
 </html>

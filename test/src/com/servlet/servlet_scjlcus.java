@@ -71,7 +71,7 @@ public class servlet_scjlcus extends HttpServlet {
 			    or.setOrdertime(str);
 			    or.setBuyeraddress(buyeraddress);
 			    or.setBuyerphone(buyerphone);
-			    or.setOrderstate("选择");
+			    or.setOrderstate("未选择");
 			    
 			    System.out.println(or);
 			    System.out.print(or);

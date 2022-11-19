@@ -66,7 +66,7 @@ public class servlet_tjsp extends HttpServlet {
 	    String waresname=request.getParameter("waresname");
 	    String waresprice=request.getParameter("waresprice");
 	    String waresnumber=request.getParameter("waresnumber");
-	    String waresclass=request.getParameter("waresclass");
+	    String waresclass="无";
 	    String matketing=request.getParameter("matketing");
 	    
 	    Wares wa = new Wares();

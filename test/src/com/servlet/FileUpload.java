@@ -66,7 +66,7 @@ public class FileUpload extends HttpServlet {
 	        } 
 	        try {
 	          String ofn = fi.getName();
-	          String updir = "C:\\Users\\周\\Desktop\\团队成果\\验收待完善\\test\\WebContent\\upload1\\";//这里我写死了request.getServletContext().getRealPath("/upload1");
+	          String updir = "C:\\Users\\周\\Desktop\\验收待完善(1)\\验收待完善\\test\\WebContent\\upload1\\";//这里我写死了request.getServletContext().getRealPath("/upload1");
 	          String ext = ofn.substring(ofn.lastIndexOf("."));
 	          String fnf = UUID.randomUUID().toString();
 	          fn = String.valueOf(fnf) + ext;

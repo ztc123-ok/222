@@ -47,11 +47,12 @@ public class servlet_lsjl extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		request.setCharacterEncoding("UTF-8");
+		int wid=Integer.parseInt(request.getParameter("wid"));
 		 HistoryImpl ord = new HistoryImpl();
 		    List<historyorder> asd = new ArrayList<>();
 		    HttpSession session = request.getSession();
 		    try {
-		      asd = ord.selecthistoryorder();
+		      asd = ord.selecthistoryorderwaresid(wid);
 		    } catch (Exception exception) {}
 		    System.out.print(asd);
 		    session.setAttribute("lsjlxx", asd);

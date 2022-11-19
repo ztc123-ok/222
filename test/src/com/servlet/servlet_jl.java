@@ -1,9 +1,10 @@
 package com.servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.LinkedList;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.impl.OrderImpl;
+import com.impl.WaresImpl;
 import com.vo.Order;
 import com.vo.Wares;
 
@@ -52,6 +54,23 @@ public class servlet_jl extends HttpServlet {
 		OrderImpl ord = new OrderImpl();
 	    List<Order> asd = new ArrayList<>();
 	    HttpSession session = request.getSession();
+	    WaresImpl war = new WaresImpl();
+	    List<Wares> asd1 = new ArrayList<>();
+	    try {
+	      asd1 = war.selectwares();
+	    } catch (Exception exception) {}
+	    Wares w = new Wares();
+	    w=null;
+	    for(int i=0;i<asd1.size();i++) {
+	    	if(asd1.get(i).getWaresstate().equals("remove")) {
+	    		session.setAttribute("ware", w);
+	    	}
+	    	else {
+	    		w=asd1.get(i);
+	    		session.setAttribute("ware", w);
+	    		break;
+	    	}
+	    }
 	    try {
 	      asd = ord.selectorder();
 	    } catch (Exception exception) {}

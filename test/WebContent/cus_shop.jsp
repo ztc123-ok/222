@@ -24,7 +24,9 @@ if(result!=null){%>
 <body class="allbody">
 <%
 	List<Wares> asd= new ArrayList<Wares>();
-	asd=(List<Wares>)session.getAttribute("yhspxxcus");%>
+	asd=(List<Wares>)session.getAttribute("yhspxxcus");
+	int n=0;
+	%>
 	<div class="spzhuye">
 	<a class="us_a" href="servlet_yhspxxcus">商城首页</a>
 	<a class="us_a" href="admin_login.jsp">登录</a>
@@ -33,6 +35,7 @@ if(result!=null){%>
 			Wares qwe=new Wares();
 			qwe=asd.get(i);
 			if(!qwe.getWaresstate().equals("remove")){
+				n++;
 				%>
 	        <div class="spzhuye1" onclick="window.open('servlet_pergood?wid=<%= qwe.getWaresid()%>','_self')">
 	            <div class="spzhuye1_1">
@@ -42,7 +45,7 @@ if(result!=null){%>
 	                    <%=qwe.getWaresname() %>
 	            </div>
 	            <div class="spzhuye1_3">
-	                    ￥<%=qwe.getWaresprice() %>
+	                    <%=qwe.getWaresprice() %>元
 	            </div>
 	        </div>
 	        <%}} %>
@@ -50,7 +53,8 @@ if(result!=null){%>
 
     <meta charset="UTF-8">
 </table>
-
-
+<%if(n==0){ %>
+    <h1 style="text-align:center;">暂无出售商品</h1>
+    <%} %>
 </body>
 </html>

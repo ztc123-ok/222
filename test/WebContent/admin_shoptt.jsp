@@ -23,9 +23,8 @@ Wares w=(Wares)session.getAttribute("ware");
 int id=w.getWaresid();
 %>
     <a class="us_a" href="<%=request.getContextPath()%>/servlet_yhspxx">商品预览</a>
-    <a class="us_a" href="<%=request.getContextPath()%>/servlet_spxx">已上传商品</a>
-    <a class="us_a" href="<%=request.getContextPath()%>/servlet_jl">查看申请记录</a>
-    <a class="us_a" href="<%=request.getContextPath()%>/servlet_lsjl">查看历史记录</a>
+    <a class="us_a" href="<%=request.getContextPath()%>/servlet_spxx">商品记录</a>
+    <a class="us_a" href="<%=request.getContextPath()%>/servlet_jl">申请记录</a>
     <a class="us_a" href="admin_change.jsp">修改密码</a>
     <a class="us_a" href="admin_waresup.jsp">上传商品</a>
     <a class="us_a" href="servlet_tcdl">退出登录</a>
@@ -39,11 +38,8 @@ int id=w.getWaresid();
             商品名：<%= w.getWaresname()%>
             </div>
             <div class="spxq1_1_1">
-             商品价格：<%=w.getWaresprice()%>￥
+             商品价格：<%=w.getWaresprice()%>元
             </div>
-            <br/>
-            <br/>
-            <br/>
             <form action="admin_buyit.jsp">
             	<input type="hidden" name="wid" value="<%=w.getWaresid() %>">
             	<input type="hidden" name="shopid" value="<%=w.getShopid() %>">

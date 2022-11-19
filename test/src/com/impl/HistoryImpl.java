@@ -49,7 +49,32 @@ public class HistoryImpl implements HistoryDao{
 		    conn.close();
 		    return asd;
 		  }
-	  
+	  public List<historyorder> selecthistoryorderwaresid(int waresid) throws SQLException {
+		    Connection conn = getConnection();
+		    String sql = "select * from historyorder where waresid=?";
+		    PreparedStatement ps = conn.prepareStatement(sql);
+		    ps.setInt(1,waresid);
+		    ResultSet rs = ps.executeQuery();
+		    List<historyorder> asd = new ArrayList<>();
+		    historyorder order = null;
+		    while (rs.next()) {
+		      order = new historyorder();
+		      order.setHistoryid(rs.getInt(1));
+		      order.setWaresid(rs.getInt(2));
+		      order.setShopid(rs.getInt(3));
+		      order.setBuyerid(rs.getString(4));
+		      order.setWaresnumber(rs.getInt(5));
+		      order.setFinishtime(rs.getString(6));
+		      order.setBuyeraddress(rs.getString(7));
+		      order.setBuyerphone(rs.getString(8));
+		      order.setResult(rs.getString(9));
+		      asd.add(order);
+		    } 
+		    rs.close();
+		    ps.close();
+		    conn.close();
+		    return asd;
+		  }
 	  
 	  
 	  public void insertorder(historyorder or) throws SQLException{

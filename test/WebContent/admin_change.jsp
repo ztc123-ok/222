@@ -16,21 +16,18 @@ if(result!=null){%>
 }%>
 </script>
 </head>
-<body >
+<body class="allbody">
 <c:if test="${empty sessionScope.user}">
 <%response.sendRedirect("admin_login.jsp"); %>
 </c:if>
 <c:if test="${not empty sessionScope.user}">
-<div class="allbody">
-    <a class="us_a" href="<%=request.getContextPath()%>/servlet_yhspxx">商品首页</a>
-    <a class="us_a" href="<%=request.getContextPath()%>/servlet_spxx">已上传商品</a>
-    <a class="us_a" href="<%=request.getContextPath()%>/servlet_jl">查看申请记录</a>
-    <a class="us_a" href="<%=request.getContextPath()%>/servlet_lsjl">查看历史记录</a>
+    <a class="us_a" href="<%=request.getContextPath()%>/servlet_yhspxx">商品预览</a>
+    <a class="us_a" href="<%=request.getContextPath()%>/servlet_spxx">商品记录</a>
+    <a class="us_a" href="<%=request.getContextPath()%>/servlet_jl">申请记录</a>
     <a class="us_a" href="admin_change.jsp">修改密码</a>
     <a class="us_a" href="admin_waresup.jsp">上传商品</a>
     <a class="us_a" href="servlet_tcdl">退出登录</a>
-    <hr />
-</div>
+    <hr/>
  <%
 	String mess = (String)request.getAttribute("mess");         // 获取错误属性
 	if(mess != null) {
@@ -42,7 +39,7 @@ if(result!=null){%>
 	<%
 	}
 	%>
-   <div class="bodydelu">
+   <div>
     <div class="box">
         <div class="left"></div>
         <div class="right">

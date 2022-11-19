@@ -29,21 +29,23 @@ if(result!=null){%>
 </c:if>
 <c:if test="${not empty sessionScope.user}">
      <a class="us_a" href="<%=request.getContextPath()%>/servlet_yhspxx">商品预览</a>
-    <a class="us_a" href="<%=request.getContextPath()%>/servlet_spxx">已上传商品</a>
-    <a class="us_a" href="<%=request.getContextPath()%>/servlet_jl">查看申请记录</a>
-    <a class="us_a" href="<%=request.getContextPath()%>/servlet_lsjl">查看历史记录</a>
+    <a class="us_a" href="<%=request.getContextPath()%>/servlet_spxx">商品记录</a>
+    <a class="us_a" href="<%=request.getContextPath()%>/servlet_jl">申请记录</a>
     <a class="us_a" href="admin_change.jsp">修改密码</a>
     <a class="us_a" href="admin_waresup.jsp">上传商品</a>
      <a class="us_a" href="servlet_tcdl">退出登录</a>
     <hr />
 <%
 	List<Wares> asd= new ArrayList<Wares>();
-	asd=(List<Wares>)session.getAttribute("yhspxx");%>
+	asd=(List<Wares>)session.getAttribute("yhspxx");
+	int n=0;
+	%>
 	<div class="spzhuye">
 		<%for(int i=0;i<asd.size();i++){
 			Wares qwe=new Wares();
 			qwe=asd.get(i);
 			if(!qwe.getWaresstate().equals("remove")){
+				n++;
 			%>
         <div class="spzhuye1" onclick="window.open('servlet_pergood_admin?wid=<%= qwe.getWaresid()%>','_self')">
             <div class="spzhuye1_1">
@@ -53,11 +55,14 @@ if(result!=null){%>
                     <%=qwe.getWaresname() %>
             </div>
             <div class="spzhuye1_3">
-                    ￥<%=qwe.getWaresprice() %>
+                    <%=qwe.getWaresprice() %>元
             </div>
         </div>
         <%}} %>
     </div>
+    <%if(n==0){ %>
+    <h1 style="text-align:center;">暂无出售商品</h1>
+    <%} %>
 </c:if>
 </body>
 </html>
